@@ -12,14 +12,16 @@ class App extends Component {
         return (
             <div className="App">
                 <h3>Root</h3>
-                <AddNumberRoot onClick={
-                    function (size) {
-                        this.setState({
-                            number: this.state.number + size,   //6. 전달받은 size값을 초기화 되어있는 number값에 더함.
-                        })
-                    }.bind(this)}/>
+                {/*<AddNumberRoot onClick={*/}
+                {/*    function (size) {*/}
+                {/*        this.setState({*/}
+                {/*            number: this.state.number + size,   //[react]6. 전달받은 size값을 초기화 되어있는 number값에 더함.*/}
+                {/*        })*/}
+                {/*    }.bind(this)}/>*/}
 
-                <DisplayNumberRoot number = {this.state.number}/>   {/*7. 더한 number값을 DisplayNumberRoot props값으로 전달. */}
+                {/*<DisplayNumberRoot number = {this.state.number}/>   [react]7. 더한 number값을 DisplayNumberRoot props값으로 전달. */}
+                <AddNumberRoot/>
+                <DisplayNumberRoot/>
             </div>
         );
     }
