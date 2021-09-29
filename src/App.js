@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from "react";
+import AddNumberRoot from "./AddNumberRoot";
+import DisplayNumberRoot from "./DisplayNumberRoot";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    state = {
+        number: 0,
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <h3>Root</h3>
+                <AddNumberRoot onClick={
+                    function (size) {
+                        this.setState({
+                            number: this.state.number + size,   //6. 전달받은 size값을 초기화 되어있는 number값에 더함.
+                        })
+                    }.bind(this)}/>
+
+                <DisplayNumberRoot number = {this.state.number}/>   {/*7. 더한 number값을 DisplayNumberRoot props값으로 전달. */}
+            </div>
+        );
+    }
 }
 
 export default App;
