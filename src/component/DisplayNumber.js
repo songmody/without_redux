@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import store from "./store";
+import store from "../store";
 
 export default class DisplayNumber extends Component {
-    state = {
+    /* [wrapping] store관련 코드들은 container의 DisplayNumber로 보내버림! */
+   /* state = {
         number: store.getState().number  //내부적인 값 선언 -> constructor이용하여 자동으로 렌더링 되도록 함.
     }
 
@@ -13,7 +14,7 @@ export default class DisplayNumber extends Component {
                 number : store.getState().number,
             });
         }.bind(this));
-    }
+    }*/
 
     render() {
         console.log("displaynumber rendering" + store.getState().number)
@@ -22,7 +23,7 @@ export default class DisplayNumber extends Component {
                 <h3>DisplayNumber</h3>
                 {/*<input type="text" value={this.props.number} readOnly/> /!*[react]전달받은 number값을 화면에 띄워줌.*!/!*/}
                 <input type="text"
-                       value={this.state.number} //value를 store에서 가져온 값으로 바꿔도 DisplayNumber 렌더링이 일어나지 않기 때문에 subcribe필요
+                       value={this.props.number} //value를 store에서 가져온 값으로 바꿔도 DisplayNumber 렌더링이 일어나지 않기 때문에 subcribe필요
                        readOnly/>
             </div>
         );

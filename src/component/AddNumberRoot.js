@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import AddNumber from "./AddNumber";
+import AddNumber from "../container/AddNumber";  //[wrapping] 기존 component말고 container에 동일 이름으로 추가한 AddNumber컴포넌트 임포트
+// import AddNumber from "./AddNumber";
+
 
 export default class AddNumberRoot extends Component {
     render() {
