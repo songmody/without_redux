@@ -17,6 +17,7 @@ export default class DisplayNumber extends Component {
     }*/
 
     render() {
+
         console.log("displaynumber rendering" + store.getState().number)
         return (
             <div>
